@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM smartmatt";
+$sql = "SELECT * FROM smartmatt ORDER BY framenumber DESC LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
